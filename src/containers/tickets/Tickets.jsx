@@ -13,14 +13,14 @@ const Tickets = () => {
         </div>
       </div>
       <div className="t-main mt-4 grid grid-cols-4 gap-4">
-        {/* //preiority based on color ::::::: */}
-        {/* <span className="relative flex h-3 w-3">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
-        </span> */}
-
-        {/* ------------- */}
-        <div className="flex flex-col rounded-md py-2 px-4 gap-2 border">
+        {/* CARDS::::::::::::::::::::::: */}
+        <div className="relative flex flex-col rounded-md py-2 px-4 gap-2 border">
+          <div className="absolute -top-1 -right-1">
+            <span className="relative flex h-4 w-4 ">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-red-500"></span>
+            </span>
+          </div>
           <span className="self-center text-xl font-bold">Title</span>
           <div className="t-stats flex justify-between font-semibold">
             <span>dep</span>
@@ -35,6 +35,8 @@ const Tickets = () => {
             <b>Mohammed talbi</b>
           </div>
         </div>
+
+        
       </div>
     </div>
   );
