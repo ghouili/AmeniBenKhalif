@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const {sidebarOpen, setSidebarOpen} = useContext(MainContext);
   return (
-    <div className="navbar w-screen flex flex-row items-center justify-between border px-4 py-2">
+    <div className="fixed navbar z-20 h-14 w-screen flex flex-row items-center justify-between border px-4 py-2 bg-white shadow-md">
       <div className="n-left w-1/4 flex flex-row items-center justify-between px-10 ">
         <div className="n-menuIcon cursor-pointer " onClick={()=> setSidebarOpen(!sidebarOpen)} >
           <AiOutlineMenu size={24} />
