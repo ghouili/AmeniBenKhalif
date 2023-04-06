@@ -2,7 +2,7 @@ import "./tickets.css";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { AiOutlineEye } from 'react-icons/ai';
+// import { AiOutlineEye } from 'react-icons/ai';
 
 const Tickets = () => {
   return (
