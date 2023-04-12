@@ -150,11 +150,135 @@ const TicketDetails = () => {
           </div>
         </div>
 
-        <div className="w-2/6 h-fit border bg-white rounded-md shadow">
-          side
+        <div className="w-2/7 h-fit   ">
+          <div className=" pb-6 bg-white border rounded-md shadow">
+            <h2 className=" my-4 mb-4 font-semibold text-center">
+              Ticket Information
+            </h2>
+
+            <div className="pl-3 grid grid-cols-11 gap-1">
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Ticket_ID</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>TK-0021</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>User</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>Salah Guesmi</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Status</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>New</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Prioraty</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>Urgent</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Open Date</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>12/04/2023</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Asign</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <div className="">
+                  <select
+                    name=""
+                    id=""
+                    className="rounded-md px-2 py-1.5 flex items-center hover:bg-blue-600  hover:text-white border outline-none cursor-pointer"
+                  >
+                    <option selected>Assign to</option>
+                    <option value="US">Self assign</option>
+                    <option value="CA">Others assign</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          
+          <div className="w-2/7 pb-6 h-fit border bg-white rounded-md shadow mt-10 ">
+            <h1 className="my-4 mb-4 font-semibold text-center">Client Details</h1>
+            
+            <div className="pl-3 grid grid-cols-11 gap-1">
+              <div className="col-span-3 text-md font-semibold ">
+                <span>ID</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>CL-0025</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Name</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>Salah Guesmi</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Email</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>salah.guesmi@gmail.com</span>
+              </div>
+
+              <div className="col-span-3 text-md font-semibold ">
+                <span>Phone</span>
+              </div>
+              <div className="text-lg font-semibold text-center ">
+                <span>:</span>
+              </div>
+              <div className="col-span-7 text-sm ">
+                <span>26 173 452</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-
     </div>
   );
 };

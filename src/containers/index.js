@@ -1,3 +1,11 @@
 export { default as Dashboard } from './dashboard/Dashboard';
 export { default as Tickets } from './tickets/Tickets';
 export { default as TicketDetails } from './tickets/ticketDetails/TicketDetails';
+export { default as Addtickets } from './tickets/addtickets/Addtickets';
+export { default as Self_tickets } from './self_tickets/Self_tickets';
+export { default as Agent } from './agent/Agent';
+export { default as Client } from './client/Client';
+export { default as Trashed } from './trashed/Trashed';
+export { default as Contact } from './contact/Contact';
+export { default as Bhour } from './bhour/Bhour';
+export { default as Bills } from './bills/Bills';

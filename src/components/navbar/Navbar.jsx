@@ -4,26 +4,31 @@ import { AiOutlineMenu, AiOutlineExpand } from "react-icons/ai";
 import { BsMoonStars, BsFillPersonFill } from "react-icons/bs";
 import { HiOutlineTicket } from "react-icons/hi";
 import { MainContext } from "../../hooks/context/MainContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
-  const {sidebarOpen, setSidebarOpen} = useContext(MainContext);
+  const { sidebarOpen, setSidebarOpen } = useContext(MainContext);
   return (
     <div className="fixed navbar z-20 h-14 w-screen flex flex-row items-center justify-between border px-4 py-2 bg-white shadow-md">
       <div className="n-left w-1/4 flex flex-row items-center justify-between px-10 ">
-        <div className="n-menuIcon cursor-pointer " onClick={()=> setSidebarOpen(!sidebarOpen)} >
+        <div
+          className="n-menuIcon cursor-pointer "
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+        >
           <AiOutlineMenu size={24} />
         </div>
         <div className="n-LOGO cursor-pointer ">
           <p>LOGO</p>
         </div>
       </div>
-      <button
-        type="button"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-2 py-1.5 "
+      <Link
+        to="/ADDticket"
+        className="text-white outline-none  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-2 py-1.5 "
       >
-        <div className="flex flex-row items-center gap-1 text-lg"><HiOutlineTicket size={24} /> Create Ticket</div>
-      </button>
+        <div className="flex flex-row items-center gap-1 text-lg">
+          <HiOutlineTicket size={24} /> Create Ticket
+        </div>
+      </Link>
 
       <div className="n-right w-1/2 flex flex-row items-center justify-between pr-2 ">
         <div className="n-input ">
@@ -76,7 +81,7 @@ const Navbar = () => {
               <BsFillPersonFill size={24} color="#fff" />
             </div>
             <span>
-              <b>Ameni Ben Khlif</b>
+              <b>Ameni Ben Khalifa</b>
             </span>
           </div>
         </div>

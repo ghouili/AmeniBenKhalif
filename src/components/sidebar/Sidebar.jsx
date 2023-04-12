@@ -6,18 +6,18 @@ import { HiOutlineTicket } from "react-icons/hi";
 import { RiShieldUserLine } from "react-icons/ri";
 import { BsFileEarmarkMedical } from "react-icons/bs";
 import { TbClockHour2 } from "react-icons/tb";
-import { RxGear } from "react-icons/rx";
+import { TbTrash } from "react-icons/tb";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
-import { BsCircle } from "react-icons/bs";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import { MainContext } from "../../hooks/context/MainContext";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const { sidebarOpen } = useContext(MainContext);
-  const [subMenuTicket, setSubMenuTicket] = useState(false);
+  const [subMenuTicketG, setSubMenuTicketG] = useState(false);
+  const [subMenuTicketS, setSubMenuTicketS] = useState(false);
   return (
-    <div className="sidebar fixed z-20 h-screen p-3 flex flex-col gap-4  border transform transition-all duration-500 bg-white ">
+    <div className="sidebar overflow-y-auto fixed z-20 h-screen p-3 flex flex-col gap-4  border transform transition-all duration-500 bg-white ">
       <Link to="/">
         <div
           className="
@@ -36,25 +36,25 @@ const Sidebar = () => {
           className="
       s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
       "
-      onClick={()=> setSubMenuTicket(!subMenuTicket)}
+      onClick={()=> setSubMenuTicketG(!subMenuTicketG)}
         >
           <HiOutlineTicket size={24} />
           <span className={`font-semibold ${sidebarOpen ? "" : "hidden"}`}>
             Global Tickets
           </span>
-          {subMenuTicket ?
+          {subMenuTicketG ?
           <IoIosArrowDown size={16} />
           :
           <IoIosArrowForward size={16} />
           }
         </div>
       </Link>
-      {!subMenuTicket ? null : 
+      {!subMenuTicketG ? null : 
       <div className=" border w-full flex flex-col gap-2 pl-6">
         <Link to="#clients">
           <div className=" flex flex-row items-center gap-1 hover:text-blue-500 transition-all duration-300 ease-in-out">
             <p className="text-xs">o</p>
-            <span className="text-sm">Recent Tickets</span>
+            <span className="text-sm">total Tickets</span>
           </div>
         </Link>
         <Link to="#clients">
@@ -66,18 +66,68 @@ const Sidebar = () => {
         <Link to="#clients">
           <div className=" flex flex-row items-center gap-1 hover:text-blue-500 transition-all duration-300 ease-in-out">
             <p className="text-xs">o</p>
-            <span className="text-sm">Recent Tickets</span>
+            <span className="text-sm">suspend Tickets</span>
           </div>
         </Link>
         <Link to="#clients">
           <div className=" flex flex-row items-center gap-1 hover:text-blue-500 transition-all duration-300 ease-in-out">
             <p className="text-xs">o</p>
-            <span className="text-sm">Recent Tickets</span>
+            <span className="text-sm">closed Tickets</span>
           </div>
         </Link>
       </div>
       }
-      <Link to="#clients">
+
+
+ <Link to="/self_tickets">
+        <div
+          className="
+      s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
+      "
+      onClick={()=> setSubMenuTicketS(!subMenuTicketS)}
+        >
+          <HiOutlineTicket size={24} />
+          <span className={`font-semibold ${sidebarOpen ? "" : "hidden"}`}>
+            Self Tickets
+          </span>
+          {subMenuTicketS ?
+          <IoIosArrowDown size={16} />
+          :
+          <IoIosArrowForward size={16} />
+          }
+        </div>
+      </Link>
+      {!subMenuTicketS ? null : 
+      <div className=" border w-full flex flex-col gap-2 pl-6">
+        <Link to="#clients">
+          <div className=" flex flex-row items-center gap-1 hover:text-blue-500 transition-all duration-300 ease-in-out">
+            <p className="text-xs">o</p>
+            <span className="text-sm">My assigned Tickets</span>
+          </div>
+        </Link>
+        <Link to="#clients">
+          <div className=" flex flex-row items-center gap-1 hover:text-blue-500 transition-all duration-300 ease-in-out">
+            <p className="text-xs">o</p>
+            <span className="text-sm">self Tickets</span>
+          </div>
+        </Link>
+        <Link to="#clients">
+          <div className=" flex flex-row items-center gap-1 hover:text-blue-500 transition-all duration-300 ease-in-out">
+            <p className="text-xs">o</p>
+            <span className="text-sm">suspend Tickets</span>
+          </div>
+        </Link>
+        <Link to="#clients">
+          <div className=" flex flex-row items-center gap-1 hover:text-blue-500 transition-all duration-300 ease-in-out">
+            <p className="text-xs">o</p>
+            <span className="text-sm">closed Tickets</span>
+          </div>
+        </Link>
+      </div>
+      }
+
+
+      <Link to="/client">
         <div
           className="
       s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
@@ -90,7 +140,7 @@ const Sidebar = () => {
         </div>
       </Link>
 
-      <Link to="#agents">
+      <Link to="/agent">
         <div
           className="
       s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
@@ -103,7 +153,7 @@ const Sidebar = () => {
         </div>
       </Link>
 
-      <Link to="#bills">
+      <Link to="/bills">
         <div
           className="
       s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
@@ -116,20 +166,20 @@ const Sidebar = () => {
         </div>
       </Link>
 
-      <Link to="#settings">
+      <Link to="/trashed">
         <div
           className="
       s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
       "
         >
-          <RxGear size={24} />
+          <TbTrash size={24} />
           <span className={`font-semibold ${sidebarOpen ? "" : "hidden"}`}>
-            Settings
+            Trashed tickets
           </span>
         </div>
       </Link>
 
-      <Link to="#BHour">
+      <Link to="/bhour">
         <div
           className="
       s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
@@ -142,7 +192,7 @@ const Sidebar = () => {
         </div>
       </Link>
 
-      <Link to="#CSupport">
+      <Link to="/contact">
         <div
           className="
       s-dash flex flex-row items-center text-lg gap-2 py-2 px-4  hover:bg-blue-700 hover:text-white transition-all duration-300 ease-in-out rounded-md cursor-pointer
